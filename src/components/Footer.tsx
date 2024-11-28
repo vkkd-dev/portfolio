@@ -5,7 +5,7 @@ import { Input } from "./ui/input";
 const Footer = () => {
   return (
     <div className="bg-primary min-h-screen">
-      <div className="bg-background3 min-h-[40vh] flex flex-col justify-end px-5 py-7 shadow-sm">
+      <div className="bg-background3 min-h-[35vh] flex flex-col justify-end px-5 py-7 shadow-sm">
         <h2 className="text-4xl font-semibold text-white leading-tight">
           Ready to bring your idea to life?
         </h2>
@@ -27,12 +27,12 @@ const Footer = () => {
           </Button>
         </div>
       </div>
-      <div className="flex flex-col min-h-[60vh] justify-between px-5 py-7">
+      <div className="flex flex-col min-h-[65vh] justify-between px-5 py-7">
         <div>
           <h2 className="text-3xl font-semibold text-white mb-5">
             Contact <br /> Details
           </h2>
-          <div className="space-y-3">
+          <div className="space-y-2">
             {contact_data.map((contact) => (
               <div key={contact.id} className="flex items-center gap-2">
                 <img src={contact.img} alt={contact.title} />
@@ -45,7 +45,7 @@ const Footer = () => {
           <h2 className="text-3xl font-semibold text-white mb-5">
             Social Links
           </h2>
-          <div className="space-y-3">
+          <div className="space-y-2">
             {social_data.map((social) => (
               <div key={social.id} className="flex items-center gap-2">
                 <img src={social.img} alt={social.title} />
