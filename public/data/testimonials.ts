@@ -1,6 +1,6 @@
-import { Testimonials } from "@/types/Testimonials";
+import { Testimonial } from "@/types/Testimonials";
 
-export const testimonials_data: Testimonials[] = [
+export const testimonials_data: Testimonial[] = [
   {
     id: 1,
     img: "/images/testimonial1.png",

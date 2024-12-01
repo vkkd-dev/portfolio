@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import MobileMenu from "@/components/MobileMenu";
+import Footer from "@/components/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Portfolio Website",
+  title: "Portfolio | Website",
   description: "A demo portfolio website",
 };
 
@@ -16,6 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className="antialiased">
+        <Header />
         <MobileMenu />
         {children}
         <Footer />

@@ -1,15 +1,20 @@
 "use client";
 
 import ComponentTitle from "@/components/ComponentTitle";
-import { my_tools_data } from "../../../../../public/data/tool";
-import { Tools } from "@/types/Tool";
 import Image from "next/image";
+import { my_tools_data } from "../../../../../public/data/tool";
+import { Tool } from "@/types/Tool";
+import { useMediaQuery } from "react-responsive";
 
-const HomeMyTools = () => {
+const MyTools = () => {
+  const isDesktop = useMediaQuery({
+    query: "(min-width: 1300px)",
+  });
+
   return (
-    <div className="w-full min-h-screen flex flex-col justify-center items-center py-10">
+    <section id="tools" className="w-full min-h-screen flex flex-col justify-center items-center py-10">
       <ComponentTitle title="My Tools" />
-      <div className="relative grid grid-cols-2 place-items-center gap-8 w-full mt-5 py-10">
+      <div className="relative grid grid-cols-2 lg:grid-cols-3 place-items-center gap-8 w-full lg:max-w-3xl mt-5 py-10">
         <Image
           src="/images/my_tools1.png"
           width={450}
@@ -24,19 +29,19 @@ const HomeMyTools = () => {
           alt="tools bg"
           className="absolute bottom-0"
         />
-        {my_tools_data.map((tool: Tools) => (
+        {my_tools_data.map((tool: Tool) => (
           <Image
             key={tool.id}
             src={tool.img}
-            width={150}
-            height={150}
+            width={isDesktop ? 250 : 150}
+            height={isDesktop ? 250 : 150}
             alt={tool.id.toString()}
             className="z-20"
           />
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 
-export default HomeMyTools;
+export default MyTools;

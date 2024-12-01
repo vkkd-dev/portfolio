@@ -1,10 +1,15 @@
 "use client";
 
+import ComponentTitle from "@/components/ComponentTitle";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { useMediaQuery } from "react-responsive";
 
-const HomeAbout = () => {
+const About = () => {
   const [isAtBottom, setIsAtBottom] = useState(false);
+  const isDesktop = useMediaQuery({
+    query: "(min-width: 1300px)",
+  });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -22,8 +27,11 @@ const HomeAbout = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen flex flex-col justify-center items-center">
-      <h2 className="text-contentPrimary text-3xl font-bold">About Me</h2>
+    <section
+      id="about"
+      className="relative min-h-screen w-full lg:max-w-4xl mx-auto flex flex-col justify-center items-center"
+    >
+      <ComponentTitle title="About Me" />
       <Image
         width={150}
         height={150}
@@ -32,9 +40,9 @@ const HomeAbout = () => {
         className="absolute top-52 left-0"
       />
       <div
-        className={`backdrop-blur-sm bg-white/0 border border-white shadow-lg w-[90%] p-7 rounded-3xl mt-10 z-10 transition-all duration-1000 ${
+        className={`backdrop-blur-sm bg-white/0 border border-white shadow-lg lg:shadow-shadow w-[90%] p-7 rounded-3xl mt-10 z-10 transition-all duration-1000 ${
           isAtBottom ? "opacity-100 translate-y-0" : "opacity-100"
-        }`}
+        } ${isDesktop && "-rotate-2"} `}
       >
         {isAtBottom ? (
           <p className="min-h-[40vh] text-justify text-sm text-contentSecondary font-light">
@@ -75,8 +83,8 @@ const HomeAbout = () => {
       />
       {/* Invisible marker */}
       <div id="about-bottom" className="absolute bottom-0"></div>
-    </div>
+    </section>
   );
 };
 
-export default HomeAbout;
+export default About;

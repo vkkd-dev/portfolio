@@ -1,6 +1,6 @@
-import { Tools } from "@/types/Tool";
+import { Tool } from "@/types/Tool";
 
-export const my_tools_data: Tools[] = [
+export const my_tools_data: Tool[] = [
   {
     id: 1,
     img: "/images/vc_code.png",

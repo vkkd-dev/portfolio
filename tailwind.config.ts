@@ -25,6 +25,7 @@ const config: Config = {
         contentPrimary: "#000000",
         contentSecondary: "#70818F",
         contentTertiary: "#D2DFE9",
+        shadow: "#E9D8FF",
         foreground: "hsl(var(--foreground))",
         card: {
           DEFAULT: "hsl(var(--card))",

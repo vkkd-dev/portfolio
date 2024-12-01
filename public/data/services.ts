@@ -1,6 +1,12 @@
-import { Services } from "@/types/Services";
+import { Service } from "@/types/Services";
 
-export const services_data: Services[] = [
+export const services_data: Service[] = [
+  {
+    id: 0,
+    heading: "",
+    content: "",
+    img: "",
+  },
   {
     id: 1,
     heading: "App Development",

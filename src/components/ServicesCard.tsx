@@ -1,9 +1,12 @@
-import { Services } from "@/types/Services";
+import { Service } from "@/types/Services";
 import Image from "next/image";
 
-const ServicesCard = ({ service }: { service: Services }) => {
+const ServicesCard = ({ service }: { service: Service }) => {
+  if (service.id === 0) {
+    return <div className="lg:min-h-[50vh]"></div>;
+  }
   return (
-    <div className="backdrop-blur-sm bg-white/0 border-2 border-white shadow-lg m-5 px-5 py-7 rounded-3xl">
+    <div className="lg:min-h-[50vh] backdrop-blur-sm bg-white/0 border-2 border-white shadow-lg lg:shadow-shadow m-5 px-5 py-7 rounded-3xl overflow-hidden">
       <Image
         src={service.img}
         width={500}

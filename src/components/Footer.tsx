@@ -5,7 +5,7 @@ import { Input } from "./ui/input";
 const Footer = () => {
   return (
     <div className="bg-primary min-h-screen">
-      <div className="bg-background3 min-h-[35vh] flex flex-col justify-end px-5 py-7 shadow-sm">
+      <div className="bg-background3 min-h-[35vh] flex flex-col justify-end px-5 py-7 lg:px-40 shadow-sm">
         <h2 className="text-4xl font-semibold text-white leading-tight">
           Ready to bring your idea to life?
         </h2>
@@ -16,7 +16,7 @@ const Footer = () => {
           <Input
             type="email"
             placeholder="Enter your email address here"
-            className="border border-[#eee] bg-background3 w-full rounded-full pl-4"
+            className="border border-[#eee] bg-background3 w-full lg:w-96 rounded-full pl-4"
           />
           <Button
             variant="outline"
@@ -27,31 +27,33 @@ const Footer = () => {
           </Button>
         </div>
       </div>
-      <div className="flex flex-col min-h-[65vh] justify-between px-5 py-7">
-        <div>
-          <h2 className="text-3xl font-semibold text-white mb-5">
-            Contact <br /> Details
-          </h2>
-          <div className="space-y-2">
-            {contact_data.map((contact) => (
-              <div key={contact.id} className="flex items-center gap-2">
-                <img src={contact.img} alt={contact.title} />
-                <span className="text-contentTertiary">{contact.title}</span>
-              </div>
-            ))}
+      <div className="flex flex-col min-h-[65vh] justify-between px-5 py-7 lg:px-40 mx-auto">
+        <div className="flex flex-col justify-between lg:flex-row gap-10">
+          <div>
+            <h2 className="text-3xl lg:text-4xl font-semibold text-white mb-5">
+              Contact Details
+            </h2>
+            <div className="space-y-2">
+              {contact_data.map((contact) => (
+                <div key={contact.id} className="flex items-center gap-2">
+                  <img src={contact.img} alt={contact.title} />
+                  <span className="text-contentTertiary">{contact.title}</span>
+                </div>
+              ))}
+            </div>
           </div>
-        </div>
-        <div>
-          <h2 className="text-3xl font-semibold text-white mb-5">
-            Social Links
-          </h2>
-          <div className="space-y-2">
-            {social_data.map((social) => (
-              <div key={social.id} className="flex items-center gap-2">
-                <img src={social.img} alt={social.title} />
-                <span className="text-contentTertiary">{social.title}</span>
-              </div>
-            ))}
+          <div>
+            <h2 className="text-3xl lg:text-4xl font-semibold text-white mb-5">
+              Social Links
+            </h2>
+            <div className="space-y-2">
+              {social_data.map((social) => (
+                <div key={social.id} className="flex items-center gap-2">
+                  <img src={social.img} alt={social.title} />
+                  <span className="text-contentTertiary">{social.title}</span>
+                </div>
+              ))}
+            </div>
           </div>
         </div>
         <div className="flex justify-between items-center text-contentTertiary text-sm font-light">

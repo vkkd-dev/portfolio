@@ -1,6 +1,6 @@
-import { Projects } from "@/types/Projects";
+import { Project } from "@/types/Projects";
 
-export const projects_data: Projects[] = [
+export const projects_data: Project[] = [
   {
     id: 1,
     img: "/images/project1.png",
